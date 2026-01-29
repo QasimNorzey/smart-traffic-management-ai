@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Traffic Simulation Dashboard</title>
+<style>
+body {
+  font-family: Arial;
+  background: #f4f6f8;
+}
+header {
+  background: #0a4c8a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+section {
+  background: white;
+  margin: 30px auto;
+  padding: 25px;
+  width: 80%;
+  border-radius: 8px;
+}
+.card {
+  padding: 20px;
+  border-left: 5px solid #0a4c8a;
+  margin-bottom: 15px;
+}
+strong {
+  color: #0a4c8a;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Simulation Results Dashboard</h1>
+<p>LSTM–DQN Traffic Control Performance</p>
+</header>
+
+<section id="results">
+<p>Loading results...</p>
+</section>
+
+<script>
+fetch('results/metrics.json')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("results").innerHTML = `
+      <div class="card">
+        <strong>Average Waiting Time</strong><br>
+        Fixed-Time: ${data.average_waiting_time.fixed_time} sec<br>
+        LSTM–DQN: ${data.average_waiting_time.lstm_dqn} sec
+      </div>
+
+      <div class="card">
+        <strong>Average Queue Length</strong><br>
+        Fixed-Time: ${data.average_queue_length.fixed_time} vehicles<br>
+        LSTM–DQN: ${data.average_queue_length.lstm_dqn} vehicles
+      </div>
+
+      <div class="card">
+        <strong>Throughput</strong><br>
+        Fixed-Time: ${data.throughput.fixed_time} veh/hr<br>
+        LSTM–DQN: ${data.throughput.lstm_dqn} veh/hr
+      </div>
+    `;
+  });
+</script>
+
+</body>
+</html>
