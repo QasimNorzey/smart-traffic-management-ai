@@ -1,0 +1,17 @@
+frontend/index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Traffic Management with AI</title>
+</head>
+<body>
+
+<h1>Smart Traffic Management System</h1>
+
+<p>
+This project demonstrates an intelligent traffic management system
+based on LSTM prediction and DQN-based adaptive signal control.
+</p>
+
+</body>
+</html>
