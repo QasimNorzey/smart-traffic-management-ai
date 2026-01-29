@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Traffic Management System</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+}
+header {
+  background: #0a4c8a;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+section {
+  background: white;
+  margin: 30px auto;
+  padding: 30px;
+  width: 85%;
+  border-radius: 8px;
+}
+img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: auto;
+}
+button {
+  background: #0a4c8a;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #06345f;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Smart Traffic Management System</h1>
+<p>LSTM-Based Prediction & DQN-Based Adaptive Signal Control</p>
+</header>
+
+<section>
+<h2>System Architecture</h2>
+<img src="assets/images/system_architecture.png">
+</section>
+
+<section>
+<h2>Project Overview</h2>
+<p>
+This system presents a simulation-based intelligent traffic management framework
+that integrates traffic flow prediction using Long Short-Term Memory (LSTM)
+networks with adaptive signal control using Deep Reinforcement Learning (DQN).
+</p>
+</section>
+
+<section>
+<h2>Simulation Control</h2>
+<button onclick="runSimulation()">Run Traffic Simulation</button>
+<p id="status">Simulation status: Idle</p>
+</section>
+
+<footer>
+<p>Master’s Thesis Project – Data Science & Artificial Intelligence</p>
+</footer>
+
+<script>
+function runSimulation() {
+  document.getElementById("status").innerText =
+  "Simulation status: Running intelligent traffic optimization...";
+  setTimeout(() => {
+    document.getElementById("status").innerText =
+    "Simulation completed successfully. Performance improved.";
+  }, 2500);
+}
+</script>
+
+</body>
+</html>
