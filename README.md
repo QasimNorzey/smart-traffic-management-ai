@@ -4,7 +4,7 @@
 developed as part of a Master's thesis in Data Science and Artificial Intelligence.
 
 ## 🌐 Live System
-https://github.com/QasimNorzey/smart-traffic-management-ai.git
+https://qasimnorzey.github.io/smart-traffic-management-ai/index.html
 ## 🧠 Core Technologies
 - LSTM for traffic flow prediction
 - Deep Q-Network (DQN) for adaptive signal control
