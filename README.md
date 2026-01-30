@@ -21,4 +21,5 @@ This system supports the thesis:
 I implemented an AI-based traffic simulation module as a separate Python script to preserve the baseline simulation.
 The intelligent simulation generates quantitative performance metrics that are stored in a structured JSON file.
 These metrics are then visualized through a web-based dashboard, ensuring clarity, reproducibility, and separation between simulation logic and result presentation.
+********************
 By Eng. Qasim Norzey
