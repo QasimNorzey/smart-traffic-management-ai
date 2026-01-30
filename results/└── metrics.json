@@ -1,0 +1,14 @@
+{
+  "average_waiting_time": {
+    "fixed_time": 95.4,
+    "lstm_dqn": 48.7
+  },
+  "average_queue_length": {
+    "fixed_time": 18.6,
+    "lstm_dqn": 9.2
+  },
+  "throughput": {
+    "fixed_time": 820,
+    "lstm_dqn": 1085
+  }
+}
