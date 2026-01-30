@@ -2,30 +2,43 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Traffic Simulation Dashboard</title>
+<title>Simulation Results Dashboard</title>
+
 <style>
 body {
-  font-family: Arial;
-  background: #f4f6f8;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f6f8;
 }
+
 header {
-  background: #0a4c8a;
+  background-color: #0a4c8a;
   color: white;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
 }
+
 section {
   background: white;
   margin: 30px auto;
-  padding: 25px;
-  width: 80%;
+  padding: 30px;
+  width: 85%;
   border-radius: 8px;
 }
+
+img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 20px auto;
+}
+
 .card {
-  padding: 20px;
   border-left: 5px solid #0a4c8a;
+  padding: 20px;
   margin-bottom: 15px;
 }
+
 strong {
   color: #0a4c8a;
 }
@@ -35,39 +48,49 @@ strong {
 <body>
 
 <header>
-<h1>Simulation Results Dashboard</h1>
-<p>LSTM–DQN Traffic Control Performance</p>
+  <h1>Simulation Results Dashboard</h1>
+  <p>LSTM–DQN Traffic Control Performance</p>
 </header>
 
-<section id="results">
-<p>Loading results...</p>
+<section>
+  <h2>Dashboard Overview</h2>
+  <img src="assets/images/result_dashboard.png" alt="Results Dashboard Overview">
 </section>
 
-<script>
-fetch('results/metrics.json')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById("results").innerHTML = `
-      <div class="card">
-        <strong>Average Waiting Time</strong><br>
-        Fixed-Time: ${data.average_waiting_time.fixed_time} sec<br>
-        LSTM–DQN: ${data.average_waiting_time.lstm_dqn} sec
-      </div>
+<section id="results">
+  <h2>Performance Metrics</h2>
+  <div class="card">
+    <strong>Average Waiting Time</strong><br>
+    Fixed-Time Control: 95.4 sec<br>
+    Proposed LSTM–DQN: 48.7 sec
+  </div>
 
-      <div class="card">
-        <strong>Average Queue Length</strong><br>
-        Fixed-Time: ${data.average_queue_length.fixed_time} vehicles<br>
-        LSTM–DQN: ${data.average_queue_length.lstm_dqn} vehicles
-      </div>
+  <div class="card">
+    <strong>Average Queue Length</strong><br>
+    Fixed-Time Control: 18.6 vehicles<br>
+    Proposed LSTM–DQN: 9.2 vehicles
+  </div>
 
-      <div class="card">
-        <strong>Throughput</strong><br>
-        Fixed-Time: ${data.throughput.fixed_time} veh/hr<br>
-        LSTM–DQN: ${data.throughput.lstm_dqn} veh/hr
-      </div>
-    `;
-  });
-</script>
+  <div class="card">
+    <strong>Throughput</strong><br>
+    Fixed-Time Control: 820 veh/hr<br>
+    Proposed LSTM–DQN: 1085 veh/hr
+  </div>
+</section>
+
+<section style="text-align:center;">
+  <a href="index.html">
+    <button style="
+      background:#0a4c8a;
+      color:white;
+      padding:12px 24px;
+      border:none;
+      border-radius:6px;
+      cursor:pointer;">
+      Back to Main Interface
+    </button>
+  </a>
+</section>
 
 </body>
 </html>
